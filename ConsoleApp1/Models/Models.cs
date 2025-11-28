@@ -1,43 +1,17 @@
-
 using System.Text.Json.Serialization;
 
-namespace paisModels
+namespace paisModels.Models
 {
-    // JSON raíz: por ejemplo { "results": [ {...}, {...} ] }
-
-
-    //Llamar directramete en el que queremos empezar
-
-    //Cuando el objeto del Json tiene [ ] usamos list
-    //Si solo tiene { } usamos un ojeto Ejemplo en poke api Info
     public class ApiResponse
     {
         [JsonPropertyName("results")]
-        public List<Character> Results { get; set; } = new();
+        public List<Country> Results { get; set; } = new();
     }
-
-    // Datos que vienen de la API
-    public class Character
+    public class Country
     {
-        [JsonPropertyName("name")]
-        public string Name { get; set; } = "";
-
-        [JsonPropertyName("status")]
-        public string Status { get; set; } = "";
-
-        [JsonPropertyName("species")]
-        public string Species { get; set; } = "";
-
-        [JsonPropertyName("gender")]
-        public string Gender { get; set; } = "";
-    }
-
-    // Datos que tú guardas en tu lista
-    public class SavedItem
-    {
-        public string Name { get; set; } = "";
-        public string State { get; set; } = "";
-        public string Specie { get; set; } = "";
-        public string Gender { get; set; } = "";
+        public string Nombre { get; set; } = "";
+        public string Capital { get; set; } = "";
+        public string Region { get; set; } = "";
+        public long Poblacion { get; set; } = 0;
     }
 }
